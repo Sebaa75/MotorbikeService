@@ -11,6 +11,8 @@ namespace MotorbikeService.Models
         public string Name { get; set; }
         public string Brand { get; set; }
         public string Suplier { get; set; }
-        public int Price { get; set; }
+        public double Amount { get; set; }
+        public double Price { get; set; }
+        public  PartsType PartsType{ get; set; }
     }
 }

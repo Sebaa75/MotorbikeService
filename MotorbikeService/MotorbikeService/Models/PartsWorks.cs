@@ -5,12 +5,10 @@ using System.Web;
 
 namespace MotorbikeService.Models
 {
-    public class ExploitationMaterials
+    public class PartsWorks
     {
         public int Id { get; set; }
-        public string Type { get; set; }
-        public int Amount { get; set; }
-        public int Price { get; set; }
-
+        public int PartsId { get; set; }
+        public int ServiceWorksId { get; set; }
     }
 }

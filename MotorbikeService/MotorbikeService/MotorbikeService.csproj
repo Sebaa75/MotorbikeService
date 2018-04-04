@@ -196,11 +196,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\ExploitationMaterials.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MotorBike.cs" />
     <Compile Include="Models\Parts.cs" />
+    <Compile Include="Models\PartsType.cs" />
+    <Compile Include="Models\PartsWorks.cs" />
     <Compile Include="Models\ServiceWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
