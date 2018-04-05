@@ -10,6 +10,6 @@ namespace MotorbikeService.Models
         public int Id { get; set; }
         public int PartsId { get; set; }
         public int ServiceWorkId { get; set; }
-        public ServiceWork ServiceWork { get; set; }
+        public virtual ServiceWork ServiceWork { get; set; }
     }
 }
