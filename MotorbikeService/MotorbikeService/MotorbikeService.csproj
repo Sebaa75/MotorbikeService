@@ -204,6 +204,8 @@
     <Compile Include="Models\PartsWorks.cs" />
     <Compile Include="Models\ServiceWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AbstractRepository.cs" />
+    <Compile Include="Repository\MotorbikeServiceRepository.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
