@@ -11,6 +11,5 @@ namespace MotorbikeService.Models
         public DateTime date { get; set; }
         public int Mileage { get; set; }
         public string Comment { get; set; }
-    
     }
 }

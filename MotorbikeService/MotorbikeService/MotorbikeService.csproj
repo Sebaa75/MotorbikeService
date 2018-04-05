@@ -200,7 +200,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MotorBike.cs" />
     <Compile Include="Models\Parts.cs" />
-    <Compile Include="Models\PartsType.cs" />
+    <Compile Include="Enums\PartsType.cs" />
     <Compile Include="Models\PartsWorks.cs" />
     <Compile Include="Models\ServiceWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
