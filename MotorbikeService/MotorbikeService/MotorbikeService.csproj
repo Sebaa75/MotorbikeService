@@ -199,6 +199,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MotorBike.cs" />
+    <Compile Include="Models\MotorBikeServiceWork.cs" />
     <Compile Include="Models\Parts.cs" />
     <Compile Include="Enums\PartsType.cs" />
     <Compile Include="Models\PartsWorks.cs" />
