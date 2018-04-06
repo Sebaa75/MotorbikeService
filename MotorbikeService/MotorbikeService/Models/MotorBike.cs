@@ -14,5 +14,6 @@ namespace MotorbikeService.Models
         public string Plate { get; set; }
         public int Mileage { get; set; }
         public int BuildYear { get; set; }
+        public virtual List<ServiceWork> ServiceWorks { get; set; }
     }
 }

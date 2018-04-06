@@ -192,9 +192,29 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MotorBikeController.cs" />
+    <Compile Include="Controllers\PartsController.cs" />
+    <Compile Include="Controllers\ServiceWorkController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804061741093_InitialCreate.cs" />
+    <Compile Include="Migrations\201804061741093_InitialCreate.Designer.cs">
+      <DependentUpon>201804061741093_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804061812023_MigrationStarted.cs" />
+    <Compile Include="Migrations\201804061812023_MigrationStarted.Designer.cs">
+      <DependentUpon>201804061812023_MigrationStarted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804061834439_MigrationStarted1.cs" />
+    <Compile Include="Migrations\201804061834439_MigrationStarted1.Designer.cs">
+      <DependentUpon>201804061834439_MigrationStarted1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804061853001_Migration2.cs" />
+    <Compile Include="Migrations\201804061853001_Migration2.Designer.cs">
+      <DependentUpon>201804061853001_Migration2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -269,6 +289,21 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\MotorBike\Create.cshtml" />
+    <Content Include="Views\MotorBike\Delete.cshtml" />
+    <Content Include="Views\MotorBike\Details.cshtml" />
+    <Content Include="Views\MotorBike\Edit.cshtml" />
+    <Content Include="Views\MotorBike\Index.cshtml" />
+    <Content Include="Views\Parts\Create.cshtml" />
+    <Content Include="Views\Parts\Delete.cshtml" />
+    <Content Include="Views\Parts\Details.cshtml" />
+    <Content Include="Views\Parts\Edit.cshtml" />
+    <Content Include="Views\Parts\Index.cshtml" />
+    <Content Include="Views\ServiceWork\Create.cshtml" />
+    <Content Include="Views\ServiceWork\Delete.cshtml" />
+    <Content Include="Views\ServiceWork\Details.cshtml" />
+    <Content Include="Views\ServiceWork\Edit.cshtml" />
+    <Content Include="Views\ServiceWork\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -285,6 +320,20 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804061741093_InitialCreate.resx">
+      <DependentUpon>201804061741093_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804061812023_MigrationStarted.resx">
+      <DependentUpon>201804061812023_MigrationStarted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804061834439_MigrationStarted1.resx">
+      <DependentUpon>201804061834439_MigrationStarted1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804061853001_Migration2.resx">
+      <DependentUpon>201804061853001_Migration2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

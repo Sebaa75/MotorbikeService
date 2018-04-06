@@ -14,5 +14,6 @@ namespace MotorbikeService.Models
         public double Amount { get; set; }
         public double Price { get; set; }
         public PartsType PartsType{ get; set; }
+        public virtual List<PartsWorks> PartsWorks { get; set; }
     }
 }

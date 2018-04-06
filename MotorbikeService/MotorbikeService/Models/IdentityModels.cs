@@ -29,5 +29,11 @@ namespace MotorbikeService.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<MotorbikeService.Models.MotorBike> MotorBikes { get; set; }
+
+        public System.Data.Entity.DbSet<MotorbikeService.Models.Parts> Parts { get; set; }
+
+        public System.Data.Entity.DbSet<MotorbikeService.Models.ServiceWork> ServiceWorks { get; set; }
     }
 }
