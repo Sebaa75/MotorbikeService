@@ -38,6 +38,7 @@ namespace MotorbikeService.Controllers
         // GET: ServiceWork/Create
         public ActionResult Create()
         {
+
             return View();
         }
 
@@ -46,7 +47,7 @@ namespace MotorbikeService.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,date,Mileage,Comment")] ServiceWork serviceWork)
+        public ActionResult Create( ServiceWork serviceWork)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +79,7 @@ namespace MotorbikeService.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,date,Mileage,Comment")] ServiceWork serviceWork)
+        public ActionResult Edit( ServiceWork serviceWork)
         {
             if (ModelState.IsValid)
             {
