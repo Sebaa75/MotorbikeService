@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MotorbikeService.Models;
+using MotorbikeService.ViewModel;
 
 namespace MotorbikeService.Controllers
 {
@@ -38,8 +39,15 @@ namespace MotorbikeService.Controllers
         // GET: ServiceWork/Create
         public ActionResult Create()
         {
+            var viewModel = new ServiceWorkViewModel();
+            var parts = db.Parts.ToList();
+            var moturs = db.MotorBikes.ToList();
 
-            return View();
+            viewModel.ListMotur = new SelectList(moturs, "Id", "VIN");
+            viewModel.ListParts = new SelectList(parts, "Id", "Name");
+
+
+            return View(viewModel);
         }
 
         // POST: ServiceWork/Create
@@ -47,16 +55,17 @@ namespace MotorbikeService.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( ServiceWork serviceWork)
+        public ActionResult Create(ServiceWorkViewModel model)
         {
             if (ModelState.IsValid)
             {
-                db.ServiceWorks.Add(serviceWork);
+                
+                db.ServiceWorks.Add(model.ServiceWork);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(serviceWork);
+            return View(model);
         }
 
         // GET: ServiceWork/Edit/5
@@ -79,11 +88,11 @@ namespace MotorbikeService.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit( ServiceWork serviceWork)
+        public ActionResult Edit(ServiceWorkViewModel serviceWork)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(serviceWork).State = EntityState.Modified;
+                db.Entry(serviceWork.ServiceWork).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

@@ -231,6 +231,7 @@
     <Compile Include="Repository\MotorbikeServiceRepository.cs" />
     <Compile Include="Repository\MotorbikeServiceServiceWorkRepository.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\ServiceWorkViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
