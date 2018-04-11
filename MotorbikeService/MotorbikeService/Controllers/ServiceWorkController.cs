@@ -77,14 +77,14 @@ namespace MotorbikeService.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ServiceWork serviceWork = db.ServiceWorks.Find(id);
-            if (serviceWork == null)
+            ServiceWorkViewModel viewModel = new ServiceWorkViewModel();
+            viewModel.ServiceWork = db.ServiceWorks.Find(id);
+            if (viewModel.ServiceWork == null)
             {
                 return HttpNotFound();
             }
             
-
-            return View(serviceWork);
+            return View(viewModel);
         }
 
         // POST: ServiceWork/Edit/5
