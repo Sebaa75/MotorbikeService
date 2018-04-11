@@ -11,9 +11,9 @@ namespace MotorbikeService.ViewModel
     {
         public ServiceWork ServiceWork { get; set; }
         public SelectList ListParts { get; set; }
-        public SelectList ListMotur { get; set; }
-        public int PartId { get; set; }
-        public int MoturId { get; set; }
+        public SelectList ListMotorBikes { get; set; }
+        public int PartsId { get; set; }
+        public int MotorBikeId { get; set; }
 
     }
 }

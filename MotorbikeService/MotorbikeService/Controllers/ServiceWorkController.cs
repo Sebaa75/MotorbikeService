@@ -41,9 +41,9 @@ namespace MotorbikeService.Controllers
         {
             var viewModel = new ServiceWorkViewModel();
             var parts = db.Parts.ToList();
-            var moturs = db.MotorBikes.ToList();
+            var motorBikes = db.MotorBikes.ToList();
 
-            viewModel.ListMotur = new SelectList(moturs, "Id", "VIN");
+            viewModel.ListMotorBikes = new SelectList(motorBikes, "Id", "VIN");
             viewModel.ListParts = new SelectList(parts, "Id", "Name");
 
 
@@ -71,6 +71,8 @@ namespace MotorbikeService.Controllers
         // GET: ServiceWork/Edit/5
         public ActionResult Edit(int? id)
         {
+           
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -80,6 +82,8 @@ namespace MotorbikeService.Controllers
             {
                 return HttpNotFound();
             }
+            
+
             return View(serviceWork);
         }
 
@@ -88,15 +92,15 @@ namespace MotorbikeService.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(ServiceWorkViewModel serviceWork)
+        public ActionResult Edit(ServiceWorkViewModel model)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(serviceWork.ServiceWork).State = EntityState.Modified;
+                db.Entry(model.ServiceWork).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(serviceWork);
+            return View(model);
         }
 
         // GET: ServiceWork/Delete/5
@@ -111,7 +115,7 @@ namespace MotorbikeService.Controllers
             {
                 return HttpNotFound();
             }
-            return View(serviceWork);
+            return View();
         }
 
         // POST: ServiceWork/Delete/5

@@ -41,14 +41,14 @@
     <div class="form-group">
         @Html.LabelFor(model => model.ListParts, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownListFor(model => model.PartId,Model.ListParts ,new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.PartsId,Model.ListParts ,new { htmlAttributes = new { @class = "form-control" } })
          
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(model => model.ListMotur, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.ListMotorBikes, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownListFor(model => model.MoturId, Model.ListMotur, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.MotorBikeId, Model.ListMotorBikes, new { htmlAttributes = new { @class = "form-control" } })
 
         </div>
     </div>
