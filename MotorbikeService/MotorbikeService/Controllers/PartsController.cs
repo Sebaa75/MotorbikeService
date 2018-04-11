@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MotorbikeService.Models;
+using MotorbikeService.ViewModel;
 
 namespace MotorbikeService.Controllers
 {
@@ -38,7 +39,14 @@ namespace MotorbikeService.Controllers
         // GET: Parts/Create
         public ActionResult Create()
         {
-            return View();
+            var viewModel = new PartsViewModel();
+            var works = db.ServiceWorks.ToList();
+            var motorBikes = db.MotorBikes.ToList();
+
+            viewModel.ListWorks = new SelectList(works, "Id", "Comment");
+            viewModel.ListMotorBikes = new SelectList(motorBikes, "Id", "VIN");
+
+            return View(viewModel);
         }
 
         // POST: Parts/Create
@@ -46,16 +54,16 @@ namespace MotorbikeService.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( Parts parts)
+        public ActionResult Create( PartsViewModel model)
         {
             if (ModelState.IsValid)
             {
-                db.Parts.Add(parts);
+                db.Parts.Add(model.Parts);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(parts);
+            return View(model);
         }
 
         // GET: Parts/Edit/5
@@ -65,12 +73,23 @@ namespace MotorbikeService.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Parts parts = db.Parts.Find(id);
-            if (parts == null)
+
+            PartsViewModel viewModel = new PartsViewModel();
+            viewModel.Parts = db.Parts.Find(id);
+
+            var worksEdit = db.ServiceWorks.ToList();
+            var motorBikesEdit = db.MotorBikes.ToList();
+
+            viewModel.ListWorks = new SelectList(worksEdit, "Id", "Comment");
+            viewModel.ListMotorBikes = new SelectList(motorBikesEdit, "Id", "VIN");
+
+
+           // Parts parts = db.Parts.Find(id);
+            if (viewModel.Parts == null)
             {
                 return HttpNotFound();
             }
-            return View(parts);
+            return View(viewModel);
         }
 
         // POST: Parts/Edit/5

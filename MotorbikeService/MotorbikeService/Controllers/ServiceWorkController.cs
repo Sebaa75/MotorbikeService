@@ -18,7 +18,8 @@ namespace MotorbikeService.Controllers
         // GET: ServiceWork
         public ActionResult Index()
         {
-            return View(db.ServiceWorks.ToList());
+
+           return View(db.ServiceWorks.ToList());
         }
 
         // GET: ServiceWork/Details/5
@@ -79,6 +80,12 @@ namespace MotorbikeService.Controllers
             }
             ServiceWorkViewModel viewModel = new ServiceWorkViewModel();
             viewModel.ServiceWork = db.ServiceWorks.Find(id);
+
+            var partsEdit = db.Parts.ToList();
+            var motorBikesEdit = db.MotorBikes.ToList();
+            viewModel.ListMotorBikes = new SelectList(motorBikesEdit, "Id", "VIN");
+            viewModel.ListParts = new SelectList(partsEdit, "Id", "Name");
+
             if (viewModel.ServiceWork == null)
             {
                 return HttpNotFound();
